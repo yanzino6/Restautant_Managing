@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Ingredient (models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, unique=True)
     quant = models.IntegerField(default=0)
     price = models.FloatField(default=0)
     
@@ -24,5 +24,6 @@ class Requirement(models.Model):
     
 class Purchase(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    quant = models.IntegerField(default = 0)
     datetime = models.DateTimeField(auto_now_add=True)
     

@@ -1,0 +1,34 @@
+{% extends "storage_managing/base.html" %}
+
+{% load static %}
+{% block head %} 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simmer's Restaurant</title>
+
+<link rel="stylesheet" href="{% static 'storage_managing/style.css' %}">
+ {% endblock %}
+
+
+
+
+{% block content %}
+<h1>Your Ingredients</h1>
+<table>
+    <tr>
+        <td>Index</td>
+        <td>Ingredient</td>
+        <td>Quantity</td>
+        <td>Price per Unity</td>
+    </tr>
+    {% for ingredient in ingredients %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ ingredient.name }}</td>
+            <td>{{ ingredient.quant }}</td>
+            <td>{{ ingredient.price }}</td>
+            
+        </tr>
+    {% endfor %} 
+</table>
+{% endblock %}

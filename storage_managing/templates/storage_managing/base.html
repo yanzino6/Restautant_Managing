@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+{% block head %}
+{% endblock %}
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Simmer's Restaurant Storage</h1>
+        <nav>
+            <ul>
+            <li><a href = "{% url 'home' %}">Home</a> </li>  
+            <li><a href = "{% url 'purchases' %}">Purchases</a> </li> 
+            </ul>
+            
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Feito por Yan Simmer</p>
+    </footer>
+</body>
+</html>

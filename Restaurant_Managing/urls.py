@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from storage_managing import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", views.home, name="home"), 
+    path("purchases/",views.purchases, name = "purchases"), 
+    path("purchases/create", views.PurchaseCreate.as_view(), name = 'purchasecreate'),
+    path("ingredients/create", views.IngredientCreate.as_view(), name = 'ingredientcreate'),
+    path("storage/<pk>/edit", views.IngredientEdit.as_view(), name = 'ingredientedit'),
+    path("storage/",views.storage, name = "storage"),
 ]
